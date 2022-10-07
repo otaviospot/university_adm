@@ -35,12 +35,18 @@ export default class Main extends Component {
           <div className="main_content">
             <ToastContainer autoClose={4000} />
             <Routes>
-              <Route path="/" element={<Cursos />} />
-              <Route path="/cursos/:id" element={<Curso />} />
-              <Route path="/Cursos" element={<Cursos />} />
-              <Route path="/disciplinas" element={<Disciplinas />} />
-              <Route path="/alunos" element={<Alunos />} />
-              <Route path="/professores" element={<Professores />} />
+              <Route path="/university_adm" element={<Cursos />} />
+              <Route path="/university_adm/cursos/:id" element={<Curso />} />
+              <Route path="/university_adm/Cursos" element={<Cursos />} />
+              <Route
+                path="/university_adm/disciplinas"
+                element={<Disciplinas />}
+              />
+              <Route path="/university_adm/alunos" element={<Alunos />} />
+              <Route
+                path="/university_adm/professores"
+                element={<Professores />}
+              />
             </Routes>
           </div>
         </BrowserRouter>

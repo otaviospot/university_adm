@@ -65,7 +65,8 @@ fieldset {
   flex-direction: column;
   gap: 10px;
 
-  input {
+  input,
+  select {
     background: #eee;
     height: 40px;
     border-radius: 5px;
