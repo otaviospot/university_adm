@@ -1,0 +1,77 @@
+@import '../../assets/scss/var-mixin.scss';
+
+.form_add {
+  width: 600px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: white;
+  box-shadow: -10px 0px 30px rgba(0, 0, 0, 0);
+  transform: translateX(605px);
+  transition: all 0.8s;
+  will-change: transform;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 25px 20px;
+  border-radius: 12px 0px 0px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include site-small {
+    width: 100%;
+    transform: translateX(101%);
+  }
+
+  .close_formAdd {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-size: 22px;
+    color: $secundary-color;
+    font-weight: bold;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    button {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      background: $secundary-color;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  &.open {
+    transform: translateX(0px);
+    box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    background: #eee;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 20px;
+  }
+}

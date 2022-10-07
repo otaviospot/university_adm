@@ -1,0 +1,25 @@
+/* Variables */
+
+$main-color: #8b5e83;
+$secundary-color: #f56b3f;
+$txt-color: #0a0a1f;
+
+/* Media Query */
+
+@mixin site-large {
+  @media only screen and (min-width: 1601px) {
+    @content;
+  }
+}
+
+@mixin site-medium {
+  @media only screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin site-small {
+  @media only screen and (max-width: 800px) {
+    @content;
+  }
+}

@@ -1,0 +1,77 @@
+@import '../../assets/scss/var-mixin.scss';
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 100vh;
+  background: #f7f7f7;
+  box-sizing: border-box;
+  padding: 30px 15px;
+  gap: 30px;
+  position: fixed;
+  z-index: 2;
+
+  .close_menu {
+    position: absolute;
+    font-size: 30px;
+    right: 20px;
+    top: 20px;
+    display: none;
+  }
+
+  figure {
+    width: 100%;
+
+    @include site-small {
+      display: none;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  @include site-small {
+    width: 100%;
+    transform: translateX(-101%);
+    transition: transform 0.8s;
+    padding: 60px 15px 30px 15px;
+
+    &.open {
+      transform: translateX(0%);
+
+      .close_menu {
+        display: block;
+      }
+    }
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+    transition: all 0.8s;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    color: $txt-color;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0);
+
+    &:hover {
+      background: $main-color;
+      border-radius: 15px;
+      color: white;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

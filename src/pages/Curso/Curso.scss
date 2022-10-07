@@ -1,0 +1,58 @@
+@import '../../assets/scss/var-mixin.scss';
+
+.list_curso_info {
+  display: flex;
+  gap: 30px;
+
+  @include site-small {
+    flex-direction: column;
+  }
+}
+
+.curso_disciplinas,
+.curso_alunos {
+  flex: (1 1 auto);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  gap: 15px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: $secundary-color;
+  }
+}
+
+.list_disciplinas,
+.list_alunos {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    box-sizing: border-box;
+    padding: 15px 10px;
+    transition: all 0.8s;
+    will-change: background;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    span {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  li + li {
+    border-top: 1px solid #eee;
+  }
+}

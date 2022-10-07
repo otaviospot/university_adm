@@ -1,0 +1,143 @@
+@import './assets/scss/var-mixin.scss';
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #f1f1f1;
+}
+
+.main_content {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 30px 25px 30px 285px;
+  gap: 20px;
+  position: relative;
+
+  @include site-small {
+    padding: 80px 20px 30px 20px;
+  }
+
+  h1 {
+    font-weight: bold;
+    color: $main-color;
+    font-size: 40px;
+    transition: filter 0.8s;
+
+    @include site-small {
+      text-align: center;
+    }
+
+    &.formopen {
+      filter: blur(2px);
+    }
+  }
+}
+
+.main_content_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 15px;
+  transition: filter 0.8s;
+
+  &.formopen {
+    filter: blur(2px);
+  }
+}
+
+.list_item {
+  gap: 15px;
+  align-items: center;
+
+  h3 {
+    color: $secundary-color;
+    font-size: 20px;
+  }
+}
+
+.item_info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.8s;
+}
+
+.item_sublist {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    box-sizing: border-box;
+    padding: 18px;
+    transition: all 0.8s;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+
+    @include site-small {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    span {
+      color: #838383;
+      font-size: 14px;
+    }
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  li + li {
+    border-top: 1px solid #eee;
+  }
+}
+
+.add_data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  flex: 0 1 23%;
+  height: 196px;
+  border-radius: 10px;
+  border: dashed 1px #b3b3b3;
+  cursor: pointer;
+  transition: all 0.8s;
+  background-color: transparent;
+
+  @include site-small {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  &:hover {
+    background: $secundary-color;
+    color: white;
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+  left: 0;
+  top: 0;
+
+  &.open {
+    opacity: 1;
+    z-index: 1;
+  }
+}

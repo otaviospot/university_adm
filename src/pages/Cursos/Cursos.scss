@@ -1,0 +1,47 @@
+@import '../../assets/scss/var-mixin.scss';
+
+.list_cursos {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px;
+}
+
+.curso_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: white;
+  flex: 0 1 23%;
+  height: 196px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  gap: 15px;
+  position: relative;
+
+  @include site-small {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  h3 {
+    font-size: 18px;
+    text-align: center;
+    color: $txt-color;
+  }
+}
+
+.curso_info {
+  display: flex;
+  gap: 20px;
+
+  li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $secundary-color;
+    gap: 5px;
+  }
+}

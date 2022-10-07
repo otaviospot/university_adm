@@ -1,0 +1,29 @@
+@import '../../assets/scss/var-mixin.scss';
+
+header {
+  width: 100%;
+  position: fixed;
+  height: 80px;
+  background: #f7f7f7;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  flex-direction: column;
+  z-index: 2;
+
+  @include site-small {
+    display: flex;
+  }
+
+  figure {
+    margin: 0 auto;
+    position: absolute;
+  }
+
+  span {
+    align-self: flex-start;
+    font-size: 30px;
+  }
+}
