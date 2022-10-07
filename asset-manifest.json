@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/university_adm/static/css/main.3d3da57b.css",
-    "main.js": "/university_adm/static/js/main.3d5afeab.js",
+    "main.js": "/university_adm/static/js/main.33a0e692.js",
     "static/media/logo.svg": "/university_adm/static/media/logo.b9b5c74903b5f41890152995f96961a0.svg",
     "index.html": "/university_adm/index.html",
     "main.3d3da57b.css.map": "/university_adm/static/css/main.3d3da57b.css.map",
-    "main.3d5afeab.js.map": "/university_adm/static/js/main.3d5afeab.js.map"
+    "main.33a0e692.js.map": "/university_adm/static/js/main.33a0e692.js.map"
   },
   "entrypoints": [
     "static/css/main.3d3da57b.css",
-    "static/js/main.3d5afeab.js"
+    "static/js/main.33a0e692.js"
   ]
 }
