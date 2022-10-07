@@ -13,10 +13,7 @@ export default function Curso() {
   const params = useParams();
   const { id } = params;
 
-  console.log('teste');
-
   React.useEffect(() => {
-    console.log('oi');
     async function getDataCurso() {
       setIsLoading(true);
       const getCurso = await axios.get(`/cursos/${id}`);

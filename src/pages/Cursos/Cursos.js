@@ -12,7 +12,6 @@ export default function Cursos() {
   const [isLoading, setIsLoading] = useState(false);
 
   React.useEffect(() => {
-    console.log('oi');
     async function getData() {
       setIsLoading(true);
       const getCursos = await axios.get('/cursos');
