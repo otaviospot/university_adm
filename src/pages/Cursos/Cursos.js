@@ -31,7 +31,9 @@ export default function Cursos() {
         {cursos.map((curso) => (
           <article className="curso_item" key={curso.id}>
             <h3>
-              <Link to={`/cursos/${curso.id}`}>{curso.name}</Link>
+              <Link to={`/university_adm/cursos/${curso.id}`}>
+                {curso.name}
+              </Link>
             </h3>
             <ul className="curso_info">
               <li title="Quantidade de Alunos">

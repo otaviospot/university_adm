@@ -18,19 +18,19 @@ export default function Sidebar({ menuOpen, handleMenu }) {
         <img alt="uniadm logo" src={logo} />
       </figure>
       <nav>
-        <Link to="/cursos" onClick={handleMenu}>
+        <Link to="/university_adm/cursos" onClick={handleMenu}>
           <BiBook />
           Cursos
         </Link>
-        <Link to="/disciplinas" onClick={handleMenu}>
+        <Link to="/university_adm/disciplinas" onClick={handleMenu}>
           <BiBookOpen />
           Disciplinas
         </Link>
-        <Link to="/alunos" onClick={handleMenu}>
+        <Link to="/university_adm/alunos" onClick={handleMenu}>
           <BiUser />
           Alunos
         </Link>
-        <Link to="/professores" onClick={handleMenu}>
+        <Link to="/university_adm/professores" onClick={handleMenu}>
           <FaChalkboardTeacher />
           Professores
         </Link>
