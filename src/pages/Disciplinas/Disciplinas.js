@@ -25,8 +25,8 @@ export default function Disciplinas() {
   }, []);
 
   function findProf(id) {
-    const professor = professores.find((prof) => prof.disciplinaId === id);
-    return professor.name;
+    const profdisciplina = professores.find((prof) => prof.disciplinaId === id);
+    return profdisciplina.name;
   }
 
   const handleOpen = () => {
