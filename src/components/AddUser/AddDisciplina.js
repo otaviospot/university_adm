@@ -72,7 +72,7 @@ export default function AddDisciplina({ isOpen, handleOpen, getData, count }) {
   };
 
   return (
-    <section data-test={count} className={`form_add ${isOpen ? 'open' : ''}`}>
+    <section className={`form_add ${isOpen ? 'open' : ''}`}>
       <Loading isLoading={isLoading} />
       <h2>Adicionar Disciplina</h2>
       <button className="close_formAdd" onClick={handleClose}>

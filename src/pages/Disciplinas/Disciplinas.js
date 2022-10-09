@@ -27,7 +27,6 @@ export default function Disciplinas() {
       return c;
     };
     setCount(countChildren(getCursos.data) - 3);
-    console.log(countChildren(getCursos.data));
     setIsLoading(false);
   };
 
@@ -55,7 +54,7 @@ export default function Disciplinas() {
       />
       <div className={`overlay ${isOpen ? 'open' : ''}`}></div>
       <h1 className={`${isOpen ? 'formopen' : ''}`}>Disciplinas</h1>
-      <div data-teste={count} className="main_content_list">
+      <div className="main_content_list">
         {cursos.map((curso) => (
           <article className="list_item" key={curso.id}>
             <h3>{curso.name}</h3>
