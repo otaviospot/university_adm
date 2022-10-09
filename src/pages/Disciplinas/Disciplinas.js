@@ -10,6 +10,7 @@ export default function Disciplinas() {
   const [professores, setProfessores] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [count, setCount] = useState(0);
 
   const getData = async () => {
     setIsLoading(true);
@@ -17,6 +18,16 @@ export default function Disciplinas() {
     const getProfessores = await axios.get('/professores');
     setCursos(getCursos.data);
     setProfessores(getProfessores.data);
+    const countChildren = (data) => {
+      let c = 0;
+      for (let i in data) {
+        if (data[i].disciplinas) c += countChildren(data[i].disciplinas);
+        if (typeof data[i] == 'object') c += 1;
+      }
+      return c;
+    };
+    setCount(countChildren(getCursos.data) - 3);
+    console.log(countChildren(getCursos.data));
     setIsLoading(false);
   };
 
@@ -40,10 +51,11 @@ export default function Disciplinas() {
         isOpen={isOpen}
         handleOpen={handleOpen}
         getData={getData}
+        count={count}
       />
       <div className={`overlay ${isOpen ? 'open' : ''}`}></div>
       <h1 className={`${isOpen ? 'formopen' : ''}`}>Disciplinas</h1>
-      <div className="main_content_list">
+      <div data-teste={count} className="main_content_list">
         {cursos.map((curso) => (
           <article className="list_item" key={curso.id}>
             <h3>{curso.name}</h3>

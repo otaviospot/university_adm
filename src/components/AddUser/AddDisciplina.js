@@ -6,7 +6,7 @@ import { BiX } from 'react-icons/bi';
 import axios from '../../services/axios';
 import './AddUser.scss';
 
-export default function AddDisciplina({ isOpen, handleOpen, getData }) {
+export default function AddDisciplina({ isOpen, handleOpen, getData, count }) {
   const [professores, setProfessores] = useState([]);
   const [name, setName] = useState('');
   const [cursoId, setCurso] = useState('');
@@ -52,7 +52,7 @@ export default function AddDisciplina({ isOpen, handleOpen, getData }) {
 
     try {
       setIsLoading(true);
-      const disciplinaId = professores.length.toString();
+      const disciplinaId = (count + 1).toString();
       await axios.post(`/cursos/${cursoId}/disciplinas`, {
         name,
         cursoId,
@@ -72,7 +72,7 @@ export default function AddDisciplina({ isOpen, handleOpen, getData }) {
   };
 
   return (
-    <section className={`form_add ${isOpen ? 'open' : ''}`}>
+    <section data-test={count} className={`form_add ${isOpen ? 'open' : ''}`}>
       <Loading isLoading={isLoading} />
       <h2>Adicionar Disciplina</h2>
       <button className="close_formAdd" onClick={handleClose}>
@@ -134,4 +134,5 @@ AddDisciplina.propTypes = {
   handleOpen: PropTypes.func.isRequired,
   getData: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
+  count: PropTypes.number.isRequired,
 };
